@@ -1,0 +1,37 @@
+\ProvidesPackage{preamble}
+
+% Localization
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+
+% Document
+\usepackage[pdfusetitle]{hyperref}
+\usepackage{scrhack}
+\usepackage{scrdate}
+\usepackage{scrtime}
+\usepackage{import}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\graphicspath{{./fig/}}
+
+% Additional options
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+% Computer Modern serif font for headers
+\addtokomafont{disposition}{\rmfamily} 
+
+\KOMAoption{parskip}{on}
+\KOMAoption{toc}{listof,bib,index}
+
+% Newline after paragraphs
+\RedeclareSectionCommands[
+  afterskip=1sp
+]{paragraph,subparagraph}
+
+% Checkmark symbol definition
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
