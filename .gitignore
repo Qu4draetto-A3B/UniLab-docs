@@ -25,6 +25,10 @@ hs_err_pid*
 replay_pid*
 
 # LaTeX
+## Output folders
+out/
+aux/
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
