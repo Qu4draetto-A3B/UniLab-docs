@@ -14,17 +14,33 @@
 
 Il progetto è sviluppato in \textsl{Java 17} sui sistemi operativi \textsl{Arch Linux} e \textsl{Windows 11}.
 L'applicazione è stata testata sugli stessi sistemi.
-\section{Librerie esterne utilizzate}
+
+\section{Librerie in Comune al Client e al Server Utilizzate}
+
 Per lo sviluppo di questo progetto sono state utilizzate alcune librerie di terze parti.
-\subsection{\textsl{LIB1}}
+
+Per le librerie specifiche al client (Capitolo \ref{ch:client}) e al server (Capitolo \ref{ch:server}) riferirsi ai capitoli appropriati.
+
+\subsection{\textsl{Lombok}}
+
+\href{https://projectlombok.org/}{Sito progetto}
+
+Il progetto Lombok mira a ridurre la quantità di codice scritto tramite annotazioni che si attivano a tempo di compilazione.
+
+\subsection{\textsl{Apache Log4j}}
+
+\href{https://logging.apache.org/log4j/2.x/}{Sito progetto}
+
+Abbiamo usato \textsl{Log4j} per via della sua popolarità e comprovata robustezza.
+
 \chapter{Database (dbCM)}
 Di seguito si mostra lo schema Entità-Relazione del database di supporto all’esecuzione dei servizi della piattaforma Climate Monitoring.
 
 \begin{figure}[h]
 	\centering
+	\includegraphics[width=0.8\linewidth]{drawio/ERdb}
 	\caption{Schema ER di dbCM}
 	\label{fig:erdb}
-	\includegraphics[width=0.8\linewidth]{drawio/ERdb}
 \end{figure}
 
 In questo schema vegono illustrate le 4 entità richieste dalle specifiche e le relative associazioni.
@@ -57,9 +73,9 @@ Escludendo quest'ultima, le prime 4 associazioni mostrate (trattandosi di assoca
 Il seguente schema relazionale mostra nel dettaglio gli attributi (con i vari tipi associati) di ogni relazione e i relativi vincoli di chiave primaria ed esterna.
 \begin{figure}[h]
 	\centering
+	\includegraphics[width=0.9\linewidth]{img/QuickDBD-clima}
 	\caption{Schema dbCM dettagliato}
 	\label{fig:quickdbd-clima}
-	\includegraphics[width=0.9\linewidth]{img/QuickDBD-clima}
 \end{figure}
 
 Gli attributi di ogni relazione sono stati inseriti sulla base delle indicazioni fornite nel documento delle specifiche di progetto. Al riguardo, sono degne di nota le seguenti scelte progettuali:
@@ -68,8 +84,15 @@ Gli attributi di ogni relazione sono stati inseriti sulla base delle indicazioni
 	\item in \textit{\textbf{CoordinateMonitoraggio}}, gli attributi \textit{"Latitude"} e \textit{"Longitude"} sono stati separati, nonostante nel documento \textit{"CoordinateMonitoraggio.xlsx"} (fornito nelle specifiche di progetto, sulla base del quale è stata costruita questa relazione) siano parte dello stesso campo \textit{"Coordinates"}, in modo da facilitarne la manipolazione a livello applicativo.
 \end{itemize}
 
-\chapter{Modulo serverCM}
-\chapter{Modulo clientCM}
+\chapter{Modulo \texttt{org.a3b.clientCM}}
+\label{ch:client}
+
+\chapter{Modulo \texttt{org.a3b.serverCM}}
+\label{ch:server}
+
+\chapter{Modulo \texttt{org.a3b.commons}}
+\label{ch:commons}
+
 \nocite{IuriTex}
 \bibliographystyle{alpha}
 \bibliography{bib/biblio}
