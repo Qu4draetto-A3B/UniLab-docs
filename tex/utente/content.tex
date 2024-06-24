@@ -55,6 +55,67 @@ Per eseguire l’applicazione \`e necessario avere a disposizione:
 	\item un terminale.
 \end{itemize}
 \chapter{Limiti della soluzione sviluppata}
+\chapter{Avviare l'applicazione}
+All’avvio dell’applicazione compare la seguente schermata, dove è possibile visualizzare il menu principale del programma.
+\chapter{Menù principale}
+\section{Schermata Home}
+Questa è la schermata di avvio dell'applicazione, sono presente tre pulsanti:
+\begin{itemize}
+	\item \textbf{Visualizza area:} permette di visualizzare tutte le aree geografiche presenti con le relative misurazioni 
+	\item \textbf{Registrazione:} permette all'operatore di registrarsi
+	\item \textbf{Login:} permette all'operatore di accedere alla propria area personale. 
+\end{itemize}
+In tutte le schermate successive a quella Home sono presenti due pulsanti:
+\begin{itemize}
+	\item \textbf{freccia:} che permette di tornare alla schermata precedente  
+	\item \textbf{casa:} che permette di tornare alla schermata home dell'applicazione
+\end{itemize}
+\subsection{Visualizza area}
+In questa pagina è presenta una barra di ricerca, dove è possibile cercare le aree geografiche presenti nel database. Con un doppio click o selezionando l'area geografica con il mouse e premendo invio, è possibile visualizzare tutte le misurazioni per quella specifica area.
+
+\subsection{Registrazione}\label{VisualizzaArea}
+In questa schermata dell'applicazione sono presenti tutti i campi che l'operatore deve riempire per rendere la registrazione possibile: inoltre è presente il tasto registrazione per confermare inserimento dei parametri.
+I parametri che l'operatore deve inserire sono:
+\begin{itemize}
+	\item  \textbf{UserID}
+	\item  \textbf{Nome}
+	\item  \textbf{Cognome}
+	\item  \textbf{Codice Fiscale}
+	\item  \textbf{Email}
+	\item  \textbf{Password}
+\end{itemize}
+Una volta che viene premuto il tasto \textbf{Registrazione} si apre una nuova schermata per associare il centro di monitoraggio all'operatore.
+In questa schermata sono presenti due bottoni in cui l'operatore deve scegliere se creare un nuovo centro di monitoraggio o sceglierne uno già esistente.
+\subsection{Centro di monitoraggio esistente}
+\subsection{Nuovo centro di monitoraggio} \label{NuovoCentroDiMonitoraggio}
+Nella seguente pagina sono presenti i campi per creare un nuovo centro di monitoraggio:
+\begin{itemize}
+	\item \textbf{Città}
+	\item \textbf{Provincia}
+	\item \textbf{Strada}
+	\item \textbf{Numero civico}
+	\item \textbf{Zipcode}
+\end{itemize}
+Oltre ai campi è presente il buttone \textbf{conferma} per validare l'operazione di creazione del nuovo centro di monitoraggio
+\section{Login}
+Nella seguente pagina sono presenti i campi che l'operatore deve inserire per accedere alle proprie funzioni. I campi sono:
+\begin{itemize}
+	\item \textbf{UserID} 
+	\item \textbf{Password}
+\end{itemize} 
+\textbf{UserID} e \textbf{Password} sono stati precedentemente inserirti durante la registrazione.
+Inoltre la pagina contiene il buttone \textbf{Login} per accedere.
+\subsection{Inserisci Parametri}
+
+\subsection{Crea nuovo centro di monitoraggio}
+vedi :\ref{NuovoCentroDiMonitoraggio} 	\textbf{[Centro di monitoraggio esistente]}
+\subsection{Visualizza Aree}
+vedi: \ref{VisualizzaArea} 	\textbf{[Visualizza Area]}
+\subsection{Impostazioni}
+
+\section{Esci}
+Per uscire dall'applicazione è sufficiente chiudere la finestra, cliccando sull'icona a croce ("\textit{Chiudi}" o "\textit{Close}") in alto a destra:
+
 
 \nocite{IuriTex}
 \bibliographystyle{alpha}
