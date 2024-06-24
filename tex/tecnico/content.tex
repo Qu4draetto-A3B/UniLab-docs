@@ -23,15 +23,15 @@ Per le librerie specifiche al client (Capitolo \ref{ch:client}) e al server (Cap
 
 \subsection{\textsl{Lombok}}
 
-\href{https://projectlombok.org/}{Sito progetto}
+\href{https://projectlombok.org/}{Link al sito del progetto}
 
-Il progetto Lombok mira a ridurre la quantità di codice scritto tramite annotazioni che si attivano a tempo di compilazione.
+Il progetto Lombok mira a ridurre la quantità di codice scritto tramite annotazioni che si attivano a tempo di compilazione. Si è scelto di utilizzarlo in modo da ottimizzare la stesura del codice.
 
 \subsection{\textsl{Apache Log4j}}
 
-\href{https://logging.apache.org/log4j/2.x/}{Sito progetto}
+\href{https://logging.apache.org/log4j/2.x/}{Link al sito del progetto}
 
-Abbiamo usato \textsl{Log4j} per via della sua popolarità e comprovata robustezza.
+Si è scelto di usare \textsl{Log4j} come sostegno al progetto per via della sua popolarità e comprovata robustezza.
 
 \chapter{Database (dbCM)}
 Di seguito si mostra lo schema Entità-Relazione del database di supporto all’esecuzione dei servizi della piattaforma Climate Monitoring.
@@ -44,14 +44,14 @@ Di seguito si mostra lo schema Entità-Relazione del database di supporto all’
 \end{figure}
 
 
-In questo schema vegono illustrate le entità richieste dalle specifiche e le relative associazioni.
+In questo schema vengono illustrate le entità richieste dalle specifiche e le relative associazioni.
 
 Nel dettaglio:
 \begin{itemize}
 	\item \textbf{\textit{CentriRegistrati}}, contenente tutte le informazioni relative ai centri di monitoraggio registrati nel sistema, creati dai vari operatori;
-	\item \textbf{\textit{CoordinateMonitoraggio}}, contenente i dati riguardanti le aree geografiche presenti nel documento "CoordinateMonitoraggio.xlsx" fornito nelle specifiche di progetto;
+	\item \textbf{\textit{CoordinateMonitoraggio}}, contenente i dati riguardanti le aree geografiche presenti nel documento \textit{"CoordinateMonitoraggio.xlsx"} fornito nelle specifiche di progetto;
 	\item \textbf{\textit{OperatoriRegistrati}}, racchiude i dettagli relativi gli operatori che hanno effettuato la registrazione al sistema;
-	\item \textbf{\textit{ParametriClimatici}}, modella dei record per contenere tutte le informazioni che interessano le misurazioni effettuate in determinate aree d'interesse dagli operatori registrati, per conto dei relativi centri di monitoraggio.
+	\item \textbf{\textit{ParametriClimatici}}, modella dei record per racchiudere le informazioni che interessano le misurazioni effettuate in determinate aree d'interesse dagli operatori registrati, per conto dei relativi centri di monitoraggio.
 \end{itemize}
 \pagebreak
 Le associazioni costruite sulle entità appena elencate sono le seguenti:
@@ -73,7 +73,7 @@ Le associazioni costruite sulle entità appena elencate sono le seguenti:
 	      Ogni area geografica può essere considerata d'interesse da più centri di monitoraggio, i quali a loro volta possono monitorare molteplici aree d'interesse.
 	      Sulla base di questa associazione, in seguito alla ristrutturazione dello schema ER è stata costruita un'ulteriore relazione omonima, trattandosi di un'associazione di tipo "molti a molti".
 \end{itemize}
-Escludendo quest'ultima, le prime 4 associazioni mostrate (trattandosi di assocazioni di tipo "uno a molti"/"molti a uno") sono state invece riportate nello schema relazionale come vincoli di chiave esterna.
+Escludendo quest'ultima, le prime quattro associazioni mostrate (trattandosi di assocazioni di tipo "uno a molti"/"molti a uno") sono state invece riportate nello schema relazionale come vincoli di chiave esterna.
 \pagebreak
 
 Il seguente schema relazionale mostra nel dettaglio gli attributi (con i vari tipi associati) di ogni relazione e i relativi vincoli di chiave primaria ed esterna.
@@ -145,14 +145,14 @@ Come si può notare dal diagramma, comprende:
 \chapter{Modulo \texttt{org.a3b.commons}}
 \label{ch:commons}
 Commons contiene e gestisce l'insieme di risorse utilizzate sia dal modulo clientCM che da serverCM.
+
 \begin{figure}[h]
 	\centering
 	\caption{Struttura del modulo commons}
 	\label{fig:commonscm}
-	\includegraphics[width=0.85\linewidth]{../../fig/img/tecnico/CM.drawio}
+	\includegraphics[width=0.8\linewidth]{../../fig/img/tecnico/CM.drawio}
 \end{figure}
-
-
+\pagebreak
 Come si può notare dal diagramma, comprende:
 \begin{itemize}
 	\item package \textbf{\texttt{magazzeno}}
