@@ -8,7 +8,7 @@
 \listoffigures
 
 \chapter{Introduzione}
-\textsl{\textbf{Climate Monitoring}} è un'applicazione sviluppata nell’ambito del progetto di Laboratorio InterdisciplinareB (A.A. 2023/24) per il corso di laurea in Informatica dell’\textsl{Universit\`a degli Studi dell’Insubria} di Varese.
+\textsl{\textbf{Climate Monitoring}} è un'applicazione sviluppata nell’ambito del progetto di Laboratorio Interdisciplinare B (A.A. 2023/24) per il corso di laurea in Informatica dell’\textsl{Universit\`a degli Studi dell’Insubria} di Varese.
 
 Il progetto è sviluppato in \textsl{Java 17} sui sistemi operativi \textsl{Arch Linux} e \textsl{Windows 11}.
 L'applicazione è stata testata sugli stessi sistemi.
@@ -33,6 +33,34 @@ Il progetto Lombok mira a ridurre la quantità di codice scritto tramite annotaz
 
 Si è scelto di usare \textsl{Log4j} come sostegno al progetto per via della sua popolarità e comprovata robustezza.
 
+\chapter{Architettura della soluzione sviluppata}
+Il sistema (senza considerare il database) è stato sviluppato in tre moduli principali:
+\begin{itemize}
+	\item \texttt{org.a3b.clientCM}
+	\item \texttt{org.a3b.serverCM}
+	\item \texttt{org.a3b.commons}
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\caption{Architettura modulare di sistema}
+	\label{fig:architettuta}
+	\includegraphics[width=0.8\linewidth]{../../fig/img/tecnico/architettuta.drawio}
+\end{figure}
+
+Client e server comunicano tra di loro tramite RMI. Le risorse di sistema utili ad entrambi i suddetti moduli sono contenute in \texttt{org.a3b.commons}.
+
+Il database PostgreSQL comunica con il server per fornire e ricevere dati.
+
+Il funzionamento generale dell'applicazione è illustrato nel seguente diagramma:
+
+\begin{figure}[h]
+	\centering
+	\caption{Sequence diagram per illustrare il funzionamento generale del sistema}
+	\label{fig:sequence}
+	\includegraphics[width=0.7\linewidth]{../../fig/img/tecnico/sequence.drawio}
+\end{figure}
+
 \chapter{Database (dbCM)}
 Di seguito si mostra lo schema Entità-Relazione del database di supporto all’esecuzione dei servizi della piattaforma Climate Monitoring.
 
@@ -40,7 +68,7 @@ Di seguito si mostra lo schema Entità-Relazione del database di supporto all’
 	\centering
 	\caption{Schema ER del database}
 	\label{fig:erdb}
-	\includegraphics[width=0.8\linewidth]{drawio/ERdb}
+	\includegraphics[width=0.8\linewidth]{../../fig/img/tecnico/ERdb.drawio}
 \end{figure}
 
 In questo schema vengono illustrate le entità richieste dalle specifiche e le relative associazioni.
@@ -81,7 +109,7 @@ Il seguente schema relazionale mostra nel dettaglio gli attributi (con i vari ti
 	\centering
 	\caption{Schema dettagliato del database}
 	\label{fig:quickdbd-clima}
-	\includegraphics[width=0.8\linewidth]{img/QuickDBD-clima}
+	\includegraphics[width=0.8\linewidth]{../../fig/img/tecnico/QuickDBD-clima}
 \end{figure}
 
 Gli attributi di ogni relazione sono stati inseriti sulla base delle indicazioni fornite nel documento delle specifiche di progetto. Al riguardo, sono degne di nota le seguenti scelte progettuali:
@@ -106,23 +134,22 @@ Per l'integrazione del linguaggio SQL necessario per la gestione e manipolazione
 \pagebreak
 Come si può notare dal diagramma, comprende due package:
 \begin{itemize}
-	\item GUI, per raccogliere il codice dedicato allo sviluppo dell'interfaccia grafica, in particolare:
+	\item \texttt{GUI}, per raccogliere il codice dedicato allo sviluppo dell'interfaccia grafica, in particolare:
 	\begin{itemize}
 		\item classe 1...
 	\end{itemize}
-	\item logic, contenente la logica applicativa del lato client del sistema, in particolare:
+	\item \texttt{logic}, contenente la logica applicativa del lato client del sistema, in particolare:
 	\begin{itemize}
 		\item classe 1...
 	\end{itemize}
 \end{itemize}
 
 \section{Librerie Utilizzate dal Client}
-Per lo sviluppo del client sono state utilizzate alcune librerie di terze parti.
-\subsection{JavaFX}
+Per lo sviluppo dell'interfaccia grafica è stata utilizzata in particolare la seguente libreria:
 
 \subsection{\textsl{Open JavaFX}}
 
-\href{https://openjfx.io/}{Sito Progetto}
+\href{https://openjfx.io/}{Sito del progetto}
 
 Libreria per costruzione di interfacce grafiche in Java.
 
@@ -130,13 +157,11 @@ Libreria per costruzione di interfacce grafiche in Java.
 Il modulo serverCM gestisce il lato server dell'applicazione.
 \label{ch:server}
 
-Il modulo clientCM gestisce il lato server dell'applicazione.
-
 \begin{figure}[h]
 	\centering
 	\caption{Struttura del modulo serverCM}
 	\label{fig:severcm}
-	\includegraphics[width=0.9\linewidth]{drawio/serverCM}
+	\includegraphics[width=0.9\linewidth]{../../fig/img/tecnico/serverCM.drawio}
 \end{figure}
 \pagebreak
 
@@ -158,27 +183,11 @@ Come si può notare dal diagramma, comprende:
 \subsection{Dalla Libreria Standard di Java}
 
 \begin{itemize}
-	\item \texttt{java.rmi}, per rendere il sistema distribuito:
-		\begin{itemize}
-			\item \texttt{RemoteException}
-			\item \texttt{server.UnicastRemoteObject}
-			\item \texttt{registry.LocateRegistry}
-			\item \texttt{registry.Registry}
-		\end{itemize}
-	\item \texttt{java.sql}, per supportare le operazioni che coinvolgono il database:
-		\begin{itemize}
-			\item \texttt{ResultSet}
-			\item \texttt{SQLException};
-			\item \texttt{Timestamp}
-			\item \texttt{Connection}
-			\item \texttt{DriverManager}
-		\end{itemize}
-	\item \texttt{java.util}:
-	\begin{itemize}
-		\item \texttt{Objects}
-		\item \texttt{Properties}
-	\end{itemize}
+	\item \texttt{java.rmi}, per rendere il sistema distribuito;
+	\item \texttt{java.sql}, per supportare le operazioni che coinvolgono il database;
+	\item \texttt{java.util};
 \end{itemize}
+Per ulteriori informazioni consultare il codice sorgente.
 
 \subsection{\textsl{PostgreSQL JDBC Driver}}
 
@@ -200,7 +209,7 @@ Commons contiene e gestisce l'insieme di risorse utilizzate sia dal modulo clien
 	\centering
 	\caption{Struttura del modulo commons}
 	\label{fig:commonscm}
-	\includegraphics[width=0.8\linewidth]{drawio/CM}
+	\includegraphics[width=0.8\linewidth]{../../fig/img/tecnico/CM.drawio}
 \end{figure}
 \pagebreak
 Come si può notare dal diagramma, comprende:
@@ -231,6 +240,15 @@ Come si può notare dal diagramma, comprende:
 	
 		Racchiude tutte i metodi forniti dal server e utilizzate dal client. In particolare sono presenti tutte le funzioni richieste dalle specifiche di progetto.
 \end{itemize}
+
+\chapter{Scelte strutturali e algoritmiche rilevanti}
+\begin{itemize}
+	\item hashmap per dato
+	\item algotirmiche boh
+\end{itemize}
+\chapter{Gestione di file, directory e repository}
+
+\chapter{Limiti della soluzione sviluppata}
 
 \nocite{IuriTex}
 \bibliographystyle{alpha}
