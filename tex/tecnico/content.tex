@@ -40,9 +40,8 @@ Di seguito si mostra lo schema Entità-Relazione del database di supporto all’
 	\centering
 	\caption{Schema ER del database}
 	\label{fig:erdb}
-	\includegraphics[width=0.8\linewidth]{../../fig/img/tecnico/ERdb.drawio}
+	\includegraphics[width=0.8\linewidth]{drawio/ERdb}
 \end{figure}
-
 
 In questo schema vengono illustrate le entità richieste dalle specifiche e le relative associazioni.
 
@@ -82,7 +81,7 @@ Il seguente schema relazionale mostra nel dettaglio gli attributi (con i vari ti
 	\centering
 	\caption{Schema dettagliato del database}
 	\label{fig:quickdbd-clima}
-	\includegraphics[width=0.8\linewidth]{../../fig/img/tecnico/QuickDBD-clima}
+	\includegraphics[width=0.8\linewidth]{img/QuickDBD-clima}
 \end{figure}
 
 Gli attributi di ogni relazione sono stati inseriti sulla base delle indicazioni fornite nel documento delle specifiche di progetto. Al riguardo, sono degne di nota le seguenti scelte progettuali:
@@ -92,18 +91,28 @@ Gli attributi di ogni relazione sono stati inseriti sulla base delle indicazioni
 \end{itemize}
 
 \chapter{Modulo \texttt{org.a3b.clientCM}}
-Il modulo clientCM gestisce il lato client dell'applicazione.
 \label{ch:client}
+
+Il modulo clientCM gestisce il lato client dell'applicazione.
+
 \section{Librerie Utilizzate dal Client}
 
+\subsection{\textsl{Open JavaFX}}
+
+\href{https://openjfx.io/}{Sito Progetto}
+
+Libreria per costruzione di interfacce grafiche in Java.
+
 \chapter{Modulo \texttt{org.a3b.serverCM}}
-Il modulo clientCM gestisce il lato server dell'applicazione.
 \label{ch:server}
+
+Il modulo clientCM gestisce il lato server dell'applicazione.
+
 \begin{figure}[h]
 	\centering
 	\caption{Struttura del modulo serverCM}
 	\label{fig:severcm}
-	\includegraphics[width=0.9\linewidth]{../../fig/img/tecnico/ServerCM.drawio}
+	\includegraphics[width=0.9\linewidth]{drawio/serverCM}
 \end{figure}
 \pagebreak
 
@@ -118,6 +127,9 @@ Come si può notare dal diagramma, comprende:
 \end{itemize}
 
 \section{Librerie Utilizzate dal Server}
+
+\subsection{Dalla Libreria Standard di Java}
+
 \begin{itemize}
 	\item \texttt{java.rmi}, per rendere il sistema distribuito:
 		\begin{itemize}
@@ -139,8 +151,19 @@ Come si può notare dal diagramma, comprende:
 		\item \texttt{Objects}
 		\item \texttt{Properties}
 	\end{itemize}
-	
 \end{itemize}
+
+\subsection{\textsl{PostgreSQL JDBC Driver}}
+
+\href{https://mvnrepository.com/artifact/org.postgresql/postgresql/42.7.3}{Maven Central}
+
+Driver JDBC per connettere il server al database PostgreSQL.
+
+\subsection{\textsl{dotenv-java}}
+
+\href{https://mvnrepository.com/artifact/io.github.cdimascio/dotenv-java/3.0.0}{Maven Central}
+	
+Libreria adibita alla lettura di file \texttt{.env}.
 
 \chapter{Modulo \texttt{org.a3b.commons}}
 \label{ch:commons}
@@ -150,7 +173,7 @@ Commons contiene e gestisce l'insieme di risorse utilizzate sia dal modulo clien
 	\centering
 	\caption{Struttura del modulo commons}
 	\label{fig:commonscm}
-	\includegraphics[width=0.8\linewidth]{../../fig/img/tecnico/CM.drawio}
+	\includegraphics[width=0.8\linewidth]{drawio/CM}
 \end{figure}
 \pagebreak
 Come si può notare dal diagramma, comprende:
