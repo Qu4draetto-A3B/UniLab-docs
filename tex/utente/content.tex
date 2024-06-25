@@ -51,8 +51,12 @@ Per eseguire l’applicazione \`e necessario avere a disposizione:
 	\item Java JDK 17 o superiore;
 	\item un sistema operativo a 64 bit;
 	\item un terminale.
+	\item server PostgreSQL
 \end{itemize}
 \chapter{Limiti della soluzione sviluppata}
+\begin{itemize}
+	\item l'istanza del database deve essere l'unica istanza attiva di PostgreSQL, altrimenti il server rischia di connettersi all'istanza sbagliata
+\end{itemize}
 \chapter{Avviare l'applicazione}
 All’avvio dell’applicazione compare la seguente schermata, dove è possibile visualizzare il menù principale del programma.
 \chapter{Menù principale}
@@ -68,11 +72,11 @@ In tutte le schermate dell'applicazione sono presenti inoltre due pulsanti:
 	\item \textbf{freccia a sinistra}, permette di tornare alla schermata precedente;
 	\item \textbf{icona della casa}, permette di tornare alla schermata Home dell'applicazione.
 \end{itemize}
-\subsection{Visualizza area}
+\subsection{Visualizza area}\label{VisualizzaArea}
 Questa pagina presenta una barra di ricerca, dove è possibile effettuare delle ricerche sulle aree geografiche presenti nel database.
 Con un doppio click o selezionando l'area geografica con il mouse e premendo invio, è possibile visualizzare tutte le misurazioni relative a un'area specifica.
 
-\subsection{Registrazione}\label{VisualizzaArea}
+\subsection{Registrazione}
 In questa schermata sono presenti tutti i campi che l'operatore deve compilare per la registrazione. Per la conferma è presente il pulsante \textbf{Registrazione}.
 
 In particolare, i dati che l'operatore deve inserire sono:
@@ -114,7 +118,6 @@ Per la conferma è presente il pulsante \textbf{Login}.
 Vedi \ref{NuovoCentroDiMonitoraggio} 
 \subsection{Visualizza Aree}
 Vedi \ref{VisualizzaArea}
-\subsection{Impostazioni}
 
 \section{Esci}
 Per uscire dall'applicazione è sufficiente chiudere la finestra, cliccando sull'icona a croce ("\textit{Chiudi}" o "\textit{Close}") in alto a destra:
