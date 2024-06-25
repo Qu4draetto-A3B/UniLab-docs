@@ -91,13 +91,39 @@ Gli attributi di ogni relazione sono stati inseriti sulla base delle indicazioni
 	\item in \textit{\textbf{CoordinateMonitoraggio}}, gli attributi \textit{"Latitude"} e \textit{"Longitude"} sono stati separati, nonostante nel documento \textit{"CoordinateMonitoraggio.xlsx"} (fornito nelle specifiche di progetto, sulla base del quale è stata costruita questa relazione) siano parte dello stesso campo \textit{"Coordinates"}, in modo da facilitarne la manipolazione a livello applicativo.
 \end{itemize}
 
+\section{JDBC}
+Per l'integrazione del linguaggio SQL necessario per la gestione e manipolazione dei dati all'interno del database è stata utilizzata l'interfaccia JDBC (Java Database Connectivity), come richiesto nei requisiti del progetto.
+
 \chapter{Modulo \texttt{org.a3b.clientCM}}
 Il modulo clientCM gestisce il lato client dell'applicazione.
 \label{ch:client}
+
+\begin{figure}[h]
+	\centering
+	\caption{Struttura del modulo clientCM}
+	\label{fig:clientcm}
+	\includegraphics[width=0.8\linewidth]{../../fig/img/tecnico/clientCM.drawio}
+\end{figure}
+
+\pagebreak
+Come si può notare dal diagramma, comprende due package:
+\begin{itemize}
+	\item GUI, per raccogliere il codice dedicato allo sviluppo dell'interfaccia grafica, in particolare:
+	\begin{itemize}
+		\item classe 1...
+	\end{itemize}
+	\item logic, contenente la logica applicativa del lato client del sistema, in particolare:
+	\begin{itemize}
+		\item classe 1...
+	\end{itemize}
+\end{itemize}
+
 \section{Librerie Utilizzate dal Client}
+Per lo sviluppo del client sono state utilizzate alcune librerie di terze parti.
+\subsection{JavaFX}
 
 \chapter{Modulo \texttt{org.a3b.serverCM}}
-Il modulo clientCM gestisce il lato server dell'applicazione.
+Il modulo serverCM gestisce il lato server dell'applicazione.
 \label{ch:server}
 \begin{figure}[h]
 	\centering
@@ -110,14 +136,18 @@ Il modulo clientCM gestisce il lato server dell'applicazione.
 Come si può notare dal diagramma, comprende:
 \begin{itemize}
 	\item classe \textbf{\texttt{ServerCM}}
+		
 		Si occupa della connessione RMI per rendere il sistema distribuito e della connessione con il database.
 	\item classe \textbf{\texttt{DataFactory}}
+		
 		Contiene metodi che permettono di creare le varie istanze d'interesse a partire da record estratti dal database. 
 	\item classe \textbf{\texttt{ServerImpl}}
+		
 		Implementazione vera e propria del server, estende \texttt{UnicastRemoteObject} (per essere inserita nel registry di RMI) e implementa l'interfaccia \texttt{ServicesCM}, che contenente tutte le funzioni richieste (Capitolo \ref{ch:commons}).
 \end{itemize}
 
 \section{Librerie Utilizzate dal Server}
+Per lo sviluppo del server sono state utilizzate alcune librerie di terze parti.
 \begin{itemize}
 	\item \texttt{java.rmi}, per rendere il sistema distribuito:
 		\begin{itemize}
