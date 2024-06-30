@@ -293,7 +293,40 @@ Come si può notare dal diagramma, comprende:
 	\end{itemize}
 	\item Per quanto riguarda il modulo del client (Capitolo \ref{ch:client}), la JavaDoc è presente nelle classi che modellano la logica del sistema ma non in quelle che gestiscono l'interfaccia grafica, in quanto in queste ultime sono state semplicemente utilizzate le librerie fornite da \textit{Open JavaFX} (Paragrafo \ref{ch:javafx}) oltre a minori porzioni di logica applicativa comprensibili consultando direttamente il codice sorgente.
 \end{itemize}
+
 \chapter{Gestione di file, directory e repository}
+
+\section{Repository}
+
+Il progetto è diviso in 3 repository diverse:
+
+\begin{itemize}
+	\item \href{https://github.com/Qu4draetto-A3B/UniLab-docs}{UniLab-docs}: Documentazione e manuali del progetto
+	\item \href{https://github.com/Qu4draetto-A3B/UniLab-client}{UniLab-client}: Interfaccia grafica per visualizzazione e modifica
+	\item \href{https://github.com/Qu4draetto-A3B/UniLab-server}{UniLab-server}: Server di gestione dei dati di monitoraggio
+\end{itemize}
+
+\section{File e directory}
+
+Le repositoru hanno la stessa struttura di un progetto fatto con Apache Maven:
+
+\begin{itemize}
+	\item \texttt{src/}: File \texttt{.java}
+	\item \texttt{target/}: File \texttt{.class}, \texttt{.jar} e javadoc
+	\item \texttt{launch4j/}: Programma per creare eseguibili in formato windows
+\end{itemize}
+
+Tranne \textsl{UniLab-docs}, che in quanto principalmente scritto in latex, ha una struttura differente:
+
+\begin{itemize}
+	\item \texttt{tex/}: File \LaTeX
+	\item \texttt{out/}: PDF compilati
+	\item \texttt{aux/}: File di ausilio alla compilazione
+	\item \texttt{bib/}: Bibliografie
+	\item \texttt{fig/}: Immagini e diagrammi
+	\item \texttt{sty/}: Librerie locali
+\end{itemize}
+
 
 \chapter{Limiti della soluzione sviluppata}
 I limiti della soluzione sviluppata sono consultabili nel Capitolo 5 del \textit{\textbf{Manuale Utente}}.
