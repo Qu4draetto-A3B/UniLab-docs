@@ -52,6 +52,7 @@ Client e server comunicano tra di loro tramite RMI. Le risorse di sistema utili 
 
 Il database PostgreSQL comunica con il server per fornire e ricevere dati.
 
+\pagebreak
 Il funzionamento generale dell'applicazione è illustrato nel seguente diagramma:
 
 \begin{figure}[h]
@@ -62,6 +63,7 @@ Il funzionamento generale dell'applicazione è illustrato nel seguente diagramma
 \end{figure}
 
 \chapter{Database (dbCM)}
+\label{ch:db}
 Di seguito si mostra lo schema Entità-Relazione del database di supporto all’esecuzione dei servizi della piattaforma Climate Monitoring.
 
 \begin{figure}[h]
@@ -75,7 +77,7 @@ In questo schema vengono illustrate le entità richieste dalle specifiche e le r
 
 Nel dettaglio:
 \begin{itemize}
-	\item \textbf{\textit{CentriRegistrati}}, contenente tutte le informazioni relative ai centri di monitoraggio registrati nel sistema, creati dai vari operatori;
+	\item \textbf{\textit{CentriMonitoraggio}}, contenente tutte le informazioni relative ai centri di monitoraggio registrati nel sistema, creati dai vari operatori;
 	\item \textbf{\textit{CoordinateMonitoraggio}}, contenente i dati riguardanti le aree geografiche presenti nel documento \textit{"CoordinateMonitoraggio.xlsx"} fornito nelle specifiche di progetto;
 	\item \textbf{\textit{OperatoriRegistrati}}, racchiude i dettagli relativi gli operatori che hanno effettuato la registrazione al sistema;
 	\item \textbf{\textit{ParametriClimatici}}, modella dei record per racchiudere le informazioni che interessano le misurazioni effettuate in determinate aree d'interesse dagli operatori registrati, per conto dei relativi centri di monitoraggio.
@@ -123,6 +125,7 @@ Per l'integrazione del linguaggio SQL necessario per la gestione e manipolazione
 
 \chapter{Modulo \texttt{org.a3b.clientCM}}
 \label{ch:client}
+Il modulo clientCM gestisce il lato client dell'applicazione. Per ulteriori informazioni consultare il codice sorgente.
 
 \begin{figure}[h]
 	\centering
@@ -154,7 +157,7 @@ Per lo sviluppo dell'interfaccia grafica è stata utilizzata in particolare la s
 Libreria per costruzione di interfacce grafiche in Java.
 
 \chapter{Modulo \texttt{org.a3b.serverCM}}
-Il modulo serverCM gestisce il lato server dell'applicazione.
+Il modulo serverCM gestisce il lato server dell'applicazione. Per ulteriori informazioni consultare il codice sorgente.
 \label{ch:server}
 
 \begin{figure}[h]
@@ -169,10 +172,10 @@ Come si può notare dal diagramma, comprende:
 \begin{itemize}
 	\item classe \textbf{\texttt{ServerCM}}
 		
-		Si occupa della connessione RMI per rendere il sistema distribuito e della connessione con il database.
+		Si occupa della connessione RMI per rendere il sistema distribuito e della connessione con il database;
 	\item classe \textbf{\texttt{DataFactory}}
 		
-		Contiene metodi che permettono di creare le varie istanze d'interesse a partire da record estratti dal database. 
+		Contiene metodi che permettono di creare le varie istanze d'interesse a partire da record estratti dal database;
 	\item classe \textbf{\texttt{ServerImpl}}
 		
 		Implementazione vera e propria del server, estende \texttt{UnicastRemoteObject} (per essere inserita nel registry di RMI) e implementa l'interfaccia \texttt{ServicesCM}, che contenente tutte le funzioni richieste (Capitolo \ref{ch:commons}).
@@ -187,7 +190,7 @@ Come si può notare dal diagramma, comprende:
 	\item \texttt{java.sql}, per supportare le operazioni che coinvolgono il database;
 	\item \texttt{java.util};
 \end{itemize}
-Per ulteriori informazioni consultare il codice sorgente.
+
 
 \subsection{\textsl{PostgreSQL JDBC Driver}}
 
@@ -209,7 +212,7 @@ Commons contiene e gestisce l'insieme di risorse utilizzate sia dal modulo clien
 	\centering
 	\caption{Struttura del modulo commons}
 	\label{fig:commonscm}
-	\includegraphics[width=0.75\linewidth]{../../fig/img/tecnico/CM.drawio}
+	\includegraphics[width=0.7\linewidth]{../../fig/img/tecnico/CM.drawio}
 \end{figure}
 \pagebreak
 Come si può notare dal diagramma, comprende:
@@ -221,6 +224,8 @@ Come si può notare dal diagramma, comprende:
 			\item \texttt{AreaGeografica}, rappresenta un'area di interesse per la rilevazione di parametri climatici;
 			\item \texttt{CentroMonitoraggio}, rappresenta un centro di monitoraggio;
 			\item \texttt{ListaAree}, rappresenta una lista di aree geografiche presenti nel database;
+			\item \texttt{ListaCentri}, rappresenta una lista di centri di monitoraggio presenti nel database;
+			\item \texttt{ListaMisurazioni}, rappresenta una lista di misurazioni climatiche presenti nel database;
 			\item \texttt{ListaOperatori}, rappresenta una lista di operatori registrati nel database;
 			\item \texttt{Misurazione}, rappresenta il risultato di una rilevazione climatica;
 			\item \texttt{Operatore}, rappresenta un operatore dei centri di monitoraggio.
@@ -244,8 +249,28 @@ Come si può notare dal diagramma, comprende:
 
 \chapter{Scelte strutturali e algoritmiche rilevanti}
 \begin{itemize}
-	\item hashmap per dato
-	\item algotirmiche boh
+	\item utilizzo di un \texttt{HashMap} per gestire \texttt{Misurazione}
+	
+	Nella classe \texttt{Misurazione} (Capitolo \ref{ch:commons}) è stata utilizzata la struttra dati \texttt{HashMap} fornita dalla libreria nativa di Java \texttt{java.util}, che associa delle chiavi a determinati valori. In questo caso viene associato un \texttt{TipoDatoGeografico} al proprio valore (da 0 a 5), in modo che quest'ultimo sia relativo al corretto parametro climatico.
+	
+	\item \texttt{ListaAree}, \texttt{ListaCentri}, \texttt{ListaMisurazioni}, \texttt{ListaOperatori} (Capitolo \ref{ch:commons}) estendono \texttt{ConcurrentLinkedDeque<E>}
+	
+	Tutte classi che rappresentano una lista di istanze nel sistema estendono \texttt{ConcurrentLinkedDeque<E>} invece che \texttt{LinkedList<E>} in modo da garantire la consistenza dei dati evitando problemi di concorrenza.
+	
+	\item metodo \texttt{ServerImpl.alterListaAree()}
+	
+	Il metodo \texttt{alterListaAree()}, che aggiorna la lista di aree associate a un determinato centro di monitoraggio, è strutturato nel seguente modo:
+	\begin{enumerate}
+		\item dalla tabella del database (dbCM, Capitolo \ref{ch:db}) Area\_Center vengono cancellate tutte le aree geografiche appartenenti alla lista da modificare;
+		\item vengono inserite (tramite una seconda query) le aree geografiche appartenenti alla lista modificata.
+	\end{enumerate}
+	
+	Nonostante il metodo a livello logico possa sembrare poco ottimizzato (nel caso la lista da modificare e quella aggiornata differiscano solo per poche istanze, quelle presenti in entrambe verrebbero eliminate e reinserite), è stato scelto di implementarlo nel suddetto modo, in quanto: 
+	\begin{itemize}
+		\item viene minimizzata la complessità algoritmica del codice (non sono necessari confronti tra le due liste);
+		\item il metodo può essere utilizzato anche come "set", per associare la lista di aree subito dopo la creazione di un nuovo centro di monitoraggio.
+	\end{itemize}
+	
 \end{itemize}
 \chapter{Gestione di file, directory e repository}
 

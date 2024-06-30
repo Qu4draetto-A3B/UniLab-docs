@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-06-25T21:59:36.257Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="luz7RRjpCCiqsqPaIfqD" version="21.1.2" type="device">
+<mxfile host="Electron" modified="2024-06-28T14:01:56.456Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="gGL4Ifi6e-g-raUHOIq4" version="21.1.2" type="device">
   <diagram name="Page-1" id="96Em92dcf0RogF3gsbSg">
-    <mxGraphModel dx="689" dy="352" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="656" dy="622" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -47,52 +47,58 @@
           <mxGeometry y="138" width="160" height="26" as="geometry" />
         </mxCell>
         <mxCell id="TgeIsKB1GvQfznADrXBh-4" value="ServerImpl" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="500" y="282" width="280" height="538" as="geometry" />
+          <mxGeometry x="500" y="282" width="290" height="620" as="geometry" />
         </mxCell>
         <mxCell id="TgeIsKB1GvQfznADrXBh-5" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
-          <mxGeometry y="26" width="280" height="8" as="geometry" />
+          <mxGeometry y="26" width="290" height="8" as="geometry" />
         </mxCell>
         <mxCell id="TgeIsKB1GvQfznADrXBh-6" value="+ cercaAreaGeografica(String name,&amp;nbsp; &amp;nbsp;&lt;br&gt;&amp;nbsp; &amp;nbsp;String country): Result&amp;lt;ListaAree&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
-          <mxGeometry y="34" width="280" height="36" as="geometry" />
+          <mxGeometry y="34" width="290" height="36" as="geometry" />
         </mxCell>
-        <mxCell id="TgeIsKB1GvQfznADrXBh-22" value="+ cercaAreaGeografica(double latitudine,&lt;br&gt;&amp;nbsp; &amp;nbsp;double longitudine): Result&amp;lt;ListaAree&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
-          <mxGeometry y="70" width="280" height="36" as="geometry" />
+        <mxCell id="TgeIsKB1GvQfznADrXBh-22" value="+ cercaAreaGeografica(double latitude,&lt;br&gt;&amp;nbsp; &amp;nbsp;double longitude): Result&amp;lt;ListaAree&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
+          <mxGeometry y="70" width="290" height="36" as="geometry" />
         </mxCell>
-        <mxCell id="TgeIsKB1GvQfznADrXBh-23" value="+ getAreaGeografica(long GeoID):&lt;br&gt;&amp;nbsp; &amp;nbsp;Result&amp;lt;AreaGeografica&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
-          <mxGeometry y="106" width="280" height="36" as="geometry" />
+        <mxCell id="TgeIsKB1GvQfznADrXBh-23" value="+ getAreaGeografica(long geoID):&lt;br&gt;&amp;nbsp; &amp;nbsp;Result&amp;lt;AreaGeografica&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
+          <mxGeometry y="106" width="290" height="36" as="geometry" />
         </mxCell>
-        <mxCell id="TgeIsKB1GvQfznADrXBh-24" value="+ visualizzaAreaGeografica(long GeoID):&lt;br&gt;&amp;nbsp; &amp;nbsp;Result&amp;lt;Misurazione&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
-          <mxGeometry y="142" width="280" height="36" as="geometry" />
+        <mxCell id="TgeIsKB1GvQfznADrXBh-24" value="+ visualizzaAreaGeografica(long geoID):&lt;br&gt;&amp;nbsp; &amp;nbsp;Result&amp;lt;Misurazione&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
+          <mxGeometry y="142" width="290" height="36" as="geometry" />
         </mxCell>
         <mxCell id="TgeIsKB1GvQfznADrXBh-25" value="+ registrazione(Operatore operator,&lt;br&gt;&amp;nbsp; &amp;nbsp;String password): Result&amp;lt;Operatore&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
-          <mxGeometry y="178" width="280" height="36" as="geometry" />
+          <mxGeometry y="178" width="290" height="36" as="geometry" />
         </mxCell>
         <mxCell id="TgeIsKB1GvQfznADrXBh-27" value="+ login(long userID, String password):&lt;br&gt;&amp;nbsp; &amp;nbsp;Result&amp;lt;Operatore&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
-          <mxGeometry y="214" width="280" height="36" as="geometry" />
+          <mxGeometry y="214" width="290" height="36" as="geometry" />
         </mxCell>
         <mxCell id="TgeIsKB1GvQfznADrXBh-26" value="+ registraCentroAree(CentroMonitoraggio&lt;br&gt;&amp;nbsp; &amp;nbsp;centro): Result&amp;lt;CentroMonitoraggio&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
-          <mxGeometry y="250" width="280" height="36" as="geometry" />
+          <mxGeometry y="250" width="290" height="36" as="geometry" />
         </mxCell>
         <mxCell id="TgeIsKB1GvQfznADrXBh-28" value="+ getListaAree(long centerID):&lt;br&gt;&amp;nbsp; &amp;nbsp;Result&amp;lt;ListaAree&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
-          <mxGeometry y="286" width="280" height="36" as="geometry" />
-        </mxCell>
-        <mxCell id="TgeIsKB1GvQfznADrXBh-29" value="+ inserisciParametriClimatici(Misurazione&lt;br&gt;&amp;nbsp; &amp;nbsp;misurazione):&amp;nbsp;Result&amp;lt;Misurazione&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
-          <mxGeometry y="322" width="280" height="36" as="geometry" />
-        </mxCell>
-        <mxCell id="TgeIsKB1GvQfznADrXBh-30" value="+ getMisurazione(long recordID):&lt;br&gt;&amp;nbsp; &amp;nbsp;Result&amp;lt;Misurazione&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
-          <mxGeometry y="358" width="280" height="36" as="geometry" />
-        </mxCell>
-        <mxCell id="TgeIsKB1GvQfznADrXBh-32" value="+ login(long userID, String password):&lt;br&gt;&amp;nbsp; &amp;nbsp;Result&amp;lt;Operatore&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
-          <mxGeometry y="394" width="280" height="36" as="geometry" />
-        </mxCell>
-        <mxCell id="TgeIsKB1GvQfznADrXBh-31" value="+ getOperatore(long userID):&lt;br&gt;&amp;nbsp; &amp;nbsp;Result&amp;lt;CentroMonitoraggio&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
-          <mxGeometry y="430" width="280" height="36" as="geometry" />
+          <mxGeometry y="286" width="290" height="36" as="geometry" />
         </mxCell>
         <mxCell id="BqMPYsbbGyf_3eFGufmX-1" value="+&amp;nbsp;getAreeGeografiche&lt;span style=&quot;background-color: initial;&quot;&gt;():&lt;/span&gt;&amp;nbsp;Result&amp;lt;ListaAree&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
-          <mxGeometry y="466" width="280" height="36" as="geometry" />
+          <mxGeometry y="322" width="290" height="28" as="geometry" />
         </mxCell>
-        <mxCell id="uHFnqTzhBvpn5nZnHJPD-1" value="+&amp;nbsp;getOperatoriRegistrati&lt;span style=&quot;background-color: initial;&quot;&gt;():&lt;/span&gt;&amp;nbsp;Result&amp;lt;ListaOperatori&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="TgeIsKB1GvQfznADrXBh-4">
-          <mxGeometry y="502" width="280" height="36" as="geometry" />
+        <mxCell id="uHFnqTzhBvpn5nZnHJPD-1" value="+&amp;nbsp;getOperatoriRegistrati&lt;span style=&quot;background-color: initial;&quot;&gt;():&lt;/span&gt;&amp;nbsp;Result&amp;lt;ListaOperatori&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
+          <mxGeometry y="350" width="290" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ra1zANN0agBKbvByU5WU-1" value="+&amp;nbsp;getCentriMonitoraggio&lt;span style=&quot;background-color: initial;&quot;&gt;():&lt;/span&gt;&amp;nbsp;Result&amp;lt;ListaCentri&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="TgeIsKB1GvQfznADrXBh-4">
+          <mxGeometry y="380" width="290" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ra1zANN0agBKbvByU5WU-2" value="+&amp;nbsp;alterListaAree&lt;span style=&quot;background-color: initial;&quot;&gt;(CentroMonitoraggio center, ListaAree newList):&lt;/span&gt;&amp;nbsp;Result&amp;lt;CentroMonitoraggio&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="TgeIsKB1GvQfznADrXBh-4">
+          <mxGeometry y="410" width="290" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TgeIsKB1GvQfznADrXBh-29" value="+ inserisciParametriClimatici(Misurazione&lt;br&gt;&amp;nbsp; &amp;nbsp;misurazione):&amp;nbsp;Result&amp;lt;Misurazione&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
+          <mxGeometry y="450" width="290" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="TgeIsKB1GvQfznADrXBh-30" value="+ getMisurazione(long recordID):&lt;br&gt;&amp;nbsp; &amp;nbsp;Result&amp;lt;Misurazione&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TgeIsKB1GvQfznADrXBh-4" vertex="1">
+          <mxGeometry y="486" width="290" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="Ra1zANN0agBKbvByU5WU-3" value="+&amp;nbsp;getCentroMonitoraggio&lt;span style=&quot;background-color: initial;&quot;&gt;(long centerID):&lt;br&gt;&lt;/span&gt;&amp;nbsp; &amp;nbsp;Result&amp;lt;CentroMonitoraggio&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="TgeIsKB1GvQfznADrXBh-4">
+          <mxGeometry y="522" width="290" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="Ra1zANN0agBKbvByU5WU-5" value="+&amp;nbsp;getListaMisurazioni&lt;span style=&quot;background-color: initial;&quot;&gt;(long recordID, long userID,&lt;br&gt;&amp;nbsp; &amp;nbsp;long centerID, long geoID, LocalDateTime start,&lt;br&gt;&amp;nbsp; &amp;nbsp;LocalDateTime end):&lt;/span&gt;&amp;nbsp;Result&amp;lt;ListaMisurazioni&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="TgeIsKB1GvQfznADrXBh-4">
+          <mxGeometry y="560" width="290" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TgeIsKB1GvQfznADrXBh-20" value="«interface»&lt;br&gt;&lt;b&gt;ServicesCM&lt;/b&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="680" y="150" width="110" height="50" as="geometry" />
