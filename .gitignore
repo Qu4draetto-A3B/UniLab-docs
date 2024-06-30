@@ -30,7 +30,6 @@ out/
 aux/
 
 # Compilable raster images
-*.png
 *.jpg
 *.jpeg
 
