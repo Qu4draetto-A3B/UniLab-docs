@@ -9,7 +9,7 @@
 
 \chapter{Il Programma}
 \section{Introduzione}
-\textsl{\textbf{Climate Monitoring}} \`e un'applicazione finalizzata alla rilevazione e all'analisi di parametri climatici fornita da centri di monitoraggio sul territorio italiano, in grado di rendere disponibili, a operatori ambientali e comuni cittadini, i dati relativi alla propria zona di interesse.
+\textsl{\textbf{Climate Monitoring}} \`e un'applicazione finalizzata alla rilevazione e all'analisi di parametri climatici forniti da centri di monitoraggio sul territorio italiano, in grado di rendere disponibili, a operatori ambientali e comuni cittadini, i dati relativi alla propria zona di interesse.
 \subsection{Funzionamento generale dell'applicazione}
 L'applicazione offre diverse funzionalit\`a tra cui:
 \begin{itemize}
@@ -32,6 +32,7 @@ I parametri climatici che possono essere rilevati e inseriti sono:
 	\item \textsl{Massa dei ghiacciai}, misurata in kg.
 \end{itemize}
 L'intensit\`a di ogni fenomeno climatico viene misurata su una scala che va da \textbf{1} (\textsl{critico}) a \textbf{5} (\textsl{ottimale}).
+Il valore \textbf{0} (\textsl{default}) è riservato a parametri non inseriti o non rilevanti per una determinata area (e.g. massa dei ghiacciai in un'area desertica).
 
 Possono inoltre essere presenti delle note testuali (di massimo 256 caratteri) per descrivere con più precisione i dati geografici.
 
@@ -141,6 +142,24 @@ Bottone che permette ad un operatore che ha effettuato il login di disconnetters
 Per uscire dall'applicazione è sufficiente chiudere la finestra, cliccando sull'icona a croce ("\textit{Chiudi}" o "\textit{Close}") in alto a destra:
 
 \chapter{Data set di test}
+Per testare il funzionamento dell'applicazione sono state inserite nel database al momento della sua creazione alcune istanze di default, tra cui:
+\begin{itemize}
+	\item Centri di monitoraggio:
+	\begin{itemize}
+		\item Parco Berrini, Via Roma n.71, 21020, Ternate (VA);
+		\item Parco Valle del Lanza, SP20 n.69, 22070, Valmorea (CO);
+		\item Golf Club, Via Belmonte n.169, 21100, Induno Olona (VA)
+		\item Parco Filo Blu, Via al Collegio n.10,
+		28922, Verbania(VCO);
+	\end{itemize}
+	\item Operatori registrati:
+	\begin{itemize}
+		\item Beatrice Balzarini, FFHTJN27B59C528G,bbalzarini@studenti.uninsubria.it, pwd: Lampada!23;
+		\item Michael Bernasconi, CTAGSM30R50C483Y, mbernasconi@studenti.uninsubria.it, pwd: HikesLover?15;
+	\end{itemize}
+\end{itemize}
+
+
 
 \chapter{Limiti della soluzione sviluppata}
 \begin{itemize}
