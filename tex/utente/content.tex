@@ -76,7 +76,7 @@ In tutte le schermate dell'applicazione sono presenti inoltre due pulsanti:
 \end{itemize}
 \subsection{Visualizza area}\label{VisualizzaArea}
 Questa pagina presenta una barra di ricerca, dove è possibile effettuare delle ricerche sulle aree geografiche presenti nel database.
-Con un doppio click o selezionando l'area geografica con il mouse e premendo invio, è possibile visualizzare tutte le misurazioni relative a un'area specifica.
+Con un doppio click o selezionando l'area geografica con il mouse e premendo il tasti invio, è possibile visualizzare tutte le misurazioni relative a un'area specifica tramite un istogramma.
 
 \subsection{Registrazione}
 In questa schermata sono presenti tutti i campi che l'operatore deve compilare per la registrazione. Per la conferma è presente il pulsante \textbf{Registrazione}.
@@ -94,6 +94,8 @@ Una volta premuto il tasto \textbf{Registrazione} viene aperta una nuova scherma
 
 In particolare l'operatore deve scegliere se creare un nuovo centro di monitoraggio o selezionarne uno già esistente, premendo il pulsante corrispondente.
 \subsection{Centro di monitoraggio esistente}
+Questa schermata consente di far visualizzare i centri di monitoraggio esistenti.
+Con un doppio-click o con un singolo click e il tasto invio seleziona il centro di monitoraggio esistente.
 \subsection{Nuovo centro di monitoraggio} \label{NuovoCentroDiMonitoraggio}
 In caso di selezione di quest'ultimo viene aperta la seguente pagina, nella quale andranno inseriti i dati per creare un nuovo centro di monitoraggio:
 \begin{itemize}
@@ -115,18 +117,33 @@ In particolare troviamo:
 
 Per la conferma è presente il pulsante \textbf{Login}.
 \subsection{Inserisci Parametri}
+In codesta schermata è presente una barra di ricerca dove l'operatore può selezionare le aree geografiche associate al suo centro di monitoraggio e inserire i punteggi ai vari parametri climatici ed inserire le note relative a quest'ultimi.
+Inoltre è presente il tasto invio per salvare tutte le informazioni inserite precedentemente.
+
 
 \subsection{Crea nuovo centro di monitoraggio}
-Vedi \ref{NuovoCentroDiMonitoraggio} 
+Vedi (Paragrafo \ref{NuovoCentroDiMonitoraggio})
 \subsection{Visualizza Aree}
-Vedi \ref{VisualizzaArea}
+Vedi (Paragrafo \ref{VisualizzaArea} )
+
+\subsection{Visualizza Profilo} \label{Profilo}
+Consente all'operatore registrato di visualizzare i propri dati.
+
+\subsection{Logout}
+Bottone che permette ad un operatore che ha effettuato il login di disconnettersi dal sistema, riportandolo alla schermata home. 
 
 \section{Esci}
 Per uscire dall'applicazione è sufficiente chiudere la finestra, cliccando sull'icona a croce ("\textit{Chiudi}" o "\textit{Close}") in alto a destra:
 
+\chapter{Data set di test}
+
 \chapter{Limiti della soluzione sviluppata}
 \begin{itemize}
-	\item l'istanza del database deve essere l'unica istanza attiva di PostgreSQL, altrimenti il server rischia di connettersi all'istanza sbagliata
+	\item L'istanza del database deve essere l'unica istanza attiva di PostgreSQL, altrimenti il server rischia di connettersi all'istanza sbagliata
+	\item A causa della velocità del caricamento delle finestre dell'interfaccia grafica, è necessario premere i vari pulsanti con un singolo click.
+	\item E' necessario che l'operatore dopo essersi registrato all'applicazione, si ricordi il proprio userID visualizzabile nella schermata Visualizza Profilo (Paragrafo:\ref{Profilo}), nel caso in cui volesse effettuare login futuri.  
+	\item Se si dovesse inserire anche solo un parametro errato nei campi da compilare, l'applicazione mostra un messaggio d'errore generico, che non specifica quale/i dei campi è/sono errato/i.
+	\item Si consiglia di non ridimensionare la finestra dell'applicazione in quanto i suoi componenti potrebbero risultare poco ordinati.
 \end{itemize}
 
 \nocite{IuriTex}
