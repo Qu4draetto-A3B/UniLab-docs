@@ -33,7 +33,6 @@ aux/
 *.png
 *.jpg
 *.jpeg
-!fig/img/*
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
