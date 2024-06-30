@@ -58,7 +58,34 @@ Per eseguire l’applicazione \`e necessario avere a disposizione:
 
 Il client richiede il server del progetto e un database PostgreSQL.
 
-Consultare il manuale tecnico per ulteriori informazioni su come impostare l'ambiente.
+\subsection{Database}
+
+Il database deve essere PostgreSQL.
+
+Impostarlo correttamente e al di fuori dello scopo di quato manuale.
+
+\subsection{Server}
+
+Il server necessita di un database PostgreSQL gia avviato e funzionante.
+
+Perché il server sappia dove trovare il database è necessario creare un file \texttt{postgres.env} a fianco dell'eseguibile.
+
+\begin{lstlisting}[caption={Esempio \texttt{postgres.env}}]
+POSTGRES_HOST=localhost
+POSTGRES_DB=dbCM
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=example
+\end{lstlisting}
+
+\subsection{Client}
+
+Il client necessita di un server gia avviato e funzionante.
+
+Perché il client sappia dove trovare il server è necessario creare un file \texttt{config.env} a fianco dell'eseguibile.
+
+\begin{lstlisting}[caption={Esempio \texttt{postgres.env}}]
+RMI_HOST=localhost
+\end{lstlisting}
 
 \section{Installazione programma}
 
