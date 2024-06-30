@@ -131,7 +131,7 @@ Il modulo clientCM gestisce il lato client dell'applicazione. Per ulteriori info
 	\centering
 	\caption{Struttura del modulo clientCM}
 	\label{fig:clientcm}
-	\includegraphics[width=0.8\linewidth]{../../fig/img/tecnico/clientCM.drawio}
+	\includegraphics[width=0.7\linewidth]{../../fig/img/tecnico/clientCM.drawio}
 \end{figure}
 
 \pagebreak
@@ -139,11 +139,31 @@ Come si può notare dal diagramma, comprende due package:
 \begin{itemize}
 	\item \texttt{GUI}, per raccogliere il codice dedicato allo sviluppo dell'interfaccia grafica, in particolare:
 	\begin{itemize}
-		\item classe 1...
+		\item \texttt{App}, contiene lo start dell'applicazione;
+		\item \texttt{CenterReg}, gestisce la registrazione dei centri di monitoraggio;
+		\item \texttt{ClimateParameters}, gestisce l'inserimento dei parametri climatici;
+		\item \texttt{ExistMonitorCenter}, gestisce la visualizzazione dei centri di monitoraggio presenti nel sistema;
+		\item \texttt{Home}, gestisce la visualizzazione della schemata iniziale;
+		\item \texttt{Login}, gestisce la schermata del login all'applicazione;
+		\item \texttt{NewMonitorCenter}, gestisce la creazione di nuovi centri di monitoraggio;
+		\item \texttt{Operator}, gestisce le funzioni che un operatore registrato al sistema può svolgere;
+		\item \texttt{Register}, gestisce la registrazione degli operatori al sistema;
+		\item \texttt{SearchArea}, gestisce la ricerca delle aree geografiche;
+		\item \texttt{SelectArea}, gestisce la selezione di aree geografiche in modo da poterle inserire nella lista di aree d'interesse di un centro di monitoraggio;
+		\item \texttt{VisualArea}, gestisce la visualizzazione dei parametri climatici inseriti relativi a una determinata area geografica;
 	\end{itemize}
 	\item \texttt{logic}, contenente la logica applicativa del lato client del sistema, in particolare:
 	\begin{itemize}
-		\item classe 1...
+		\item \texttt{Controller}, gestisce i controlli relativi ai parametri inseriti dall'utente;
+		\item \texttt{CustomButton}, modella i pulsanti "\textit{back}" e "\textit{home}";
+		\item \texttt{MisurazioneHandler}, gestisce la visualizzazione e l'inserimento di parametri climatici all'interno del sistema;
+		\item \texttt{NoteCell}, gestisce l'inserimento delle note associate ai vari parametri climatici;
+		\item \texttt{ParametersTable}, gestisce la tabella di inserimento di parametri climatici;
+		\item \texttt{RegisterHandler}, gestisce la registrazione degli operatori;
+		\item \texttt{RowParametres}, gestisce i singoli dati nella tabella di inserimento parametri climatici;
+		\item \texttt{SceneHandler}, gestisce la visualizzazione delle scene generiche;
+		\item \texttt{ScoreCall}, gestisce i punteggi assegnati a ogni parametro climatico;
+		\item \texttt{SubList}, gestisce la selezione dei centri di monitoraggio;
 	\end{itemize}
 \end{itemize}
 
@@ -151,6 +171,7 @@ Come si può notare dal diagramma, comprende due package:
 Per lo sviluppo dell'interfaccia grafica è stata utilizzata in particolare la seguente libreria:
 
 \subsection{\textsl{Open JavaFX}}
+\label{ch:javafx}
 
 \href{https://openjfx.io/}{Sito del progetto}
 
@@ -270,11 +291,45 @@ Come si può notare dal diagramma, comprende:
 		\item viene minimizzata la complessità algoritmica del codice (non sono necessari confronti tra le due liste);
 		\item il metodo può essere utilizzato anche come "set", per associare la lista di aree subito dopo la creazione di un nuovo centro di monitoraggio.
 	\end{itemize}
-	
+	\item Per quanto riguarda il modulo del client (Capitolo \ref{ch:client}), la JavaDoc è presente nelle classi che modellano la logica del sistema ma non in quelle che gestiscono l'interfaccia grafica, in quanto in queste ultime sono state semplicemente utilizzate le librerie fornite da \textit{Open JavaFX} (Paragrafo \ref{ch:javafx}) oltre a minori porzioni di logica applicativa comprensibili consultando direttamente il codice sorgente.
 \end{itemize}
+
 \chapter{Gestione di file, directory e repository}
 
+\section{Repository}
+
+Il progetto è diviso in 3 repository diverse:
+
+\begin{itemize}
+	\item \href{https://github.com/Qu4draetto-A3B/UniLab-docs}{UniLab-docs}: Documentazione e manuali del progetto
+	\item \href{https://github.com/Qu4draetto-A3B/UniLab-client}{UniLab-client}: Interfaccia grafica per visualizzazione e modifica
+	\item \href{https://github.com/Qu4draetto-A3B/UniLab-server}{UniLab-server}: Server di gestione dei dati di monitoraggio
+\end{itemize}
+
+\section{File e directory}
+
+Le repository hanno la stessa struttura di un progetto fatto con Apache Maven:
+
+\begin{itemize}
+	\item \texttt{src/}: File \texttt{.java}
+	\item \texttt{target/}: File \texttt{.class}, \texttt{.jar} e javadoc
+	\item \texttt{launch4j/}: Programma per creare eseguibili in formato windows
+\end{itemize}
+
+Tranne \textsl{UniLab-docs}, che in quanto principalmente scritto in \LaTeX, ha una struttura differente:
+
+\begin{itemize}
+	\item \texttt{tex/}: File \LaTeX
+	\item \texttt{out/}: PDF compilati
+	\item \texttt{aux/}: File di ausilio alla compilazione
+	\item \texttt{bib/}: Bibliografie
+	\item \texttt{fig/}: Immagini e diagrammi
+	\item \texttt{sty/}: Librerie locali
+\end{itemize}
+
+
 \chapter{Limiti della soluzione sviluppata}
+I limiti della soluzione sviluppata sono consultabili nel Capitolo 5 del \textit{\textbf{Manuale Utente}}.
 
 \nocite{IuriTex}
 \bibliographystyle{alpha}
