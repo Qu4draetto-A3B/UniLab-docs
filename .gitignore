@@ -30,10 +30,8 @@ out/
 aux/
 
 # Compilable raster images
-*.png
 *.jpg
 *.jpeg
-!fig/img/*
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -337,3 +335,4 @@ TSWLatexianTemp*
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
 *.bkp
+*.dtmp
